@@ -1,0 +1,40 @@
+@use '../../style/base';
+
+.siteMain {
+  padding-left: var(--site-edge-margin);
+  padding-right: var(--site-edge-margin);
+}
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1110px;
+  margin: 0 auto;
+  margin-top: 140px;
+
+  .mainTitle {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 48px;
+  }
+
+  .sectionWrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .registerSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 540px;
+    }
+
+    .cartSection {
+      width: 440px;
+    }
+  }
+}
+
+
+
+

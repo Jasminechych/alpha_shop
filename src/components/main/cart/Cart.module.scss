@@ -1,0 +1,108 @@
+@use '../../../style/base';
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 32px 24px;
+  // height: 492px;
+  background: var(--background-color);
+  border: 1px solid var(--product-action-bg);
+  border-radius: 8px;
+
+  .cartTitle {
+    font-family: 'Noto Sans TC';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--main-text)
+  }
+
+  .productSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+
+    .productContainer {
+      display: flex;
+
+      .productImage {
+        height: 100px;
+        width: 100px;
+        border-radius: 4px;
+      }
+
+      .productWrap {
+        display: flex;
+        flex-direction: column;
+        margin-left: 21px;
+        width: 100%;
+
+        .productInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .productName {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: var(--main-text);
+              }
+
+            .productPrice {
+              font-family: var(--main-font-number-family);
+              font-weight: 700;
+              font-size: 16px;
+              color: var(--product-action-text);
+            }
+            
+          }
+
+          .productControlContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 116px;
+            height: 27px;
+            margin-top: 18px;
+
+            .productControlBtn {
+              cursor: pointer
+            }
+
+            .productCount {
+              font-family: var(--main-font-number-family);
+              font-weight: 500;
+              font-size: 14px;
+              color: var(--product-action-text);
+            }
+          }
+      } 
+    }
+  }
+
+  .cartInfo {
+    height: 37px;
+    border-top: 1px solid var(--product-action-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+
+    .cartInfoText {
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--main-text);
+    }
+    
+    .cartInfoPrice {
+      font-family: var(--main-font-number-family);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--product-action-text);
+    }
+  }
+}

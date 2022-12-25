@@ -1,0 +1,30 @@
+@use '../../../style/base';
+
+.registerFormSection {
+  outline: 1px solid red;
+  height: 100%;
+}
+
+.formContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 64px);
+  grid-gap: 24px 30px;
+  margin-bottom: 48px;
+
+  .cardName {
+    grid-column: 1 / 5;
+  }
+
+  .cardNumber {
+    grid-column: 1 / 5;
+  }
+
+  .cardValid {
+    grid-column: 1 / 4;
+  }
+
+  .cardCvc {
+    grid-column: 4 / 7;
+  }
+}

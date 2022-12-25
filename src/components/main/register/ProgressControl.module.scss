@@ -1,0 +1,42 @@
+@use '../../../style/base';
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 72px;
+  border-top: 1px solid #E6E6EB;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  width: 174px;
+  height: 46px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttonNext {
+  justify-content: center;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--pink);
+}
+
+.buttonPrev {
+  font-weight: 400;
+  color: var(--left-arrow);
+  background-color: initial;
+}
+
+.none {
+  display: none;
+}
+
+.test {
+  display: none;
+}
