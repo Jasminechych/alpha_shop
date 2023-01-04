@@ -8,6 +8,8 @@ import Cart from "./cart/Cart"
 import style from './Main.module.scss'
 
 import { useState } from 'react'
+import { CartContextProvider } from './cart/CartContext'
+import { FormContextProvider } from './FormContext.js'
 
 export default function Main() {
   const [step, setStep] = useState(1)
@@ -17,14 +19,20 @@ export default function Main() {
       <div className={style.mainContainer}>
         <h2 className={style.mainTitle}>結帳</h2>
         <div className={style.sectionWrapper}>
-          <section className={style.registerSection}>
-            <Progress step={step}/>
-            {step === 1 ? <Step1 /> : step === 2 ? <Step2 /> : <Step3 />}
-            <ProgressControl step={step} setStep={setStep}/>
-          </section>
-          <section className={style.cartSection}>
-            <Cart />
-          </section>
+          <CartContextProvider>
+            <FormContextProvider>
+              <section className={style.registerSection}>
+                <Progress step={step}/>
+                {step === 1 && <Step1 />}
+                {step === 2 && <Step2 />}
+                {step === 3 && <Step3 />}
+                <ProgressControl step={step} setStep={setStep}/>
+              </section>
+              <section className={style.cartSection}>
+                <Cart />
+              </section>
+            </FormContextProvider>
+          </CartContextProvider>
         </div>
       </div>
     </main>

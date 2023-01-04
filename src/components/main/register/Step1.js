@@ -1,4 +1,5 @@
 
+
 import style from './Step1.module.scss'
 
 const titleData = [
@@ -94,11 +95,11 @@ export default function Step1 () {
   )
 }
 
-export function InputBox ({ className, label, type, placeholder }) {
+export function InputBox ({ className, label, name, type, placeholder, value='', onChange=()=>{} }) {
   return (
     <div className={className}>
       <div className={style.inputLabel}>{label}</div>
-      <input className={style.input} type={type} placeholder={placeholder} />
+      <input className={style.input} type={type} name={name} placeholder={placeholder} value={value} onChange={onChange} />
     </div>
   )
 }

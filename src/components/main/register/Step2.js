@@ -26,7 +26,7 @@ export default function Step2() {
 
 function ShippingGroup({id, shippingText, shippingPrice, shippingPeriod, defaultChecked }) {
   return (
-    <label className={style.shippingGroup}>
+    <label className={`${style.shippingGroup} ${defaultChecked ? style.checked : null}`}>
       <input
         className={style.radioBox}
         id={id}
@@ -36,7 +36,7 @@ function ShippingGroup({id, shippingText, shippingPrice, shippingPeriod, default
       />
       <div className={style.shippingInfo}>
         <div className={style.infoWrap}>
-          <div className={`${style.shippingText} ${id === "shipping-dhl" ? style.shippingRecommend : style.normal}`}>
+          <div className={`${style.shippingText} ${id === "shipping-dhl" ? style.shippingRecommend : null}`}>
             {shippingText}
           </div>
           <div className={style.shippingPrice}>${shippingPrice}</div>

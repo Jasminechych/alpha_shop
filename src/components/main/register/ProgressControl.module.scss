@@ -1,5 +1,9 @@
 @use '../../../style/base';
 
+.progressControl {
+  height: 72px;
+}
+
 .buttonGroup {
   display: flex;
   justify-content: space-between;
