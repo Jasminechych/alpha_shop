@@ -17,7 +17,7 @@ export const FormContextProvider = ({ children }) => {
   function handleSubmit (e) {
     e.preventDefault();
     console.log('formData: ', formData)
-    console.log('toa: ', total)
+    console.log('total: ', total)
   }
 
   return (

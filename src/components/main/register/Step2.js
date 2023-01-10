@@ -1,6 +1,9 @@
 import style from "./Step2.module.scss";
+import { useContext } from 'react'
+import { CartContext } from '../cart/CartContext'
 
 export default function Step2() {
+
   return (
     <section className={style.registerFormSection}>
       <h3 className="formTitle">運送方式</h3>
@@ -25,8 +28,10 @@ export default function Step2() {
 }
 
 function ShippingGroup({id, shippingText, shippingPrice, shippingPeriod, defaultChecked }) {
+  const {handleOnClick} = useContext(CartContext)
+
   return (
-    <label className={`${style.shippingGroup} ${defaultChecked ? style.checked : null}`}>
+    <label className={`${style.shippingGroup} ${defaultChecked ? style.checked : null}`} onClick={() => handleOnClick(id)}>
       <input
         className={style.radioBox}
         id={id}

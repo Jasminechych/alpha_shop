@@ -21,12 +21,21 @@ export const CartContext = createContext(data)
 
 export const CartContextProvider = ({ children }) => {
   const [currentData, setCurrentData] = useState(data)
+  const [shippingFee, setShippingFee] = useState(0)
+
+  function handleOnClick(id) {
+    if (id === "shipping-dhl") {
+      setShippingFee(500)
+    } else {
+      setShippingFee(0)
+    }
+  }
   
-  let total = 0
+  let total = 0 + shippingFee
   currentData.map(data => total = total + data.price * data.quantity)
 
   return (
-    <CartContext.Provider value={{currentData, setCurrentData, total}}>
+    <CartContext.Provider value={{currentData, setCurrentData, total, shippingFee, handleOnClick}}>
       {children}
     </CartContext.Provider>
   )

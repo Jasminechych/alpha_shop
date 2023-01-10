@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-
 import { CartContext } from './CartContext.js'
 
 import { ReactComponent as Minus } from '../../icons/minus.svg'
@@ -8,14 +7,13 @@ import { ReactComponent as Plus } from '../../icons/plus.svg'
 import style from "./Cart.module.scss"
 
 export default function Cart () {
-
-  const {total} = useContext(CartContext)
+  const {total, shippingFee} = useContext(CartContext)
 
   return (
       <div className={style.cart}>
         <h3 className={style.cartTitle}>購物籃</h3>
         <ProductList />
-        <CartInfo text="運費" price="免費"/>
+        <CartInfo text="運費" price={shippingFee === 0 ? "免費" : shippingFee}/>
         <CartInfo text="小計" price={total}/>
       </div>
   )
